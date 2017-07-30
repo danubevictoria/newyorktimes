@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Angular App</title>
+	<!-- ANIMATE CSS -->
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<!-- FONTAWESOME -->
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+	<!-- CUSTOM -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- ANGULAR -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</head>
+<!-- BODY -->
+<body ng-app="myApp">
+
+<div ng-controller="firstCtrl" class="container" id="search_div">
+	<!-- <h1>{{myName.toUpperCase()}}</h1> -->
+
+	<!-- ng-change: Evaluate the given expression when the user changes the input. The expression is evaluated immediately, unlike the JavaScript onchange event which only triggers at the end of a change -->
+	<!-- <input class="form-control" 
+		ng-model="myName"
+		ng-change="logChanges(myName)"
+		>
+
+	<button class="btn btn-danger"
+		ng-click="logChanges(myName)">Get Name</button>
+
+	<h1>{{myName}}</h1>
+
+	<ul>
+		<li ng-repeat="name in nameArr">{{name}}</li>
+	</ul>
+
+	<ul>
+		<li ng-repeat="person in personArr">{{person.firstName}} {{person.lastName}}</li>
+	</ul> -->
+
+	<h1>New York Times Article Finder</h1>
+	<input class="form-control" ng-model="user_input" id="input">
+	<button 
+		class="btn btn-default" 
+		ng-click="search(user_input)"
+		ng-disabled="user_input.length === 0">Search</button>
+
+	<ul>
+		<li ng-repeat="article in articlesArr">
+			<h3><a href="{{article.web_url}}">{{article.headline.main}}</a></h3>
+			Published: {{article.pub_date.substring(0, 10)}}<br><br>
+			{{article.snippet}}<br>
+		</li>
+	</ul>
+</div>
+
+<!-- SCRIPTS -->
+
+<!-- JQUERY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- BOOTSTRAP -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- CUSTOM -->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
