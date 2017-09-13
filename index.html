@@ -24,7 +24,7 @@
 	<!-- <h1>{{myName.toUpperCase()}}</h1> -->
 
 	<!-- ng-change: Evaluate the given expression when the user changes the input. The expression is evaluated immediately, unlike the JavaScript onchange event which only triggers at the end of a change -->
-	<!-- <input class="form-control" 
+	<!-- <input class="form-control"
 		ng-model="myName"
 		ng-change="logChanges(myName)"
 		>
@@ -42,15 +42,16 @@
 		<li ng-repeat="person in personArr">{{person.firstName}} {{person.lastName}}</li>
 	</ul> -->
 
-	<h1>New York Times Article Finder</h1>
+	<image width="379" height="64" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://a1.nyt.com/assets/homepage/20170810-135137/images/foundation/logos/nyt-logo-379x64.svg" src="https://a1.nyt.com/assets/homepage/20170810-135137/images/foundation/logos/nyt-logo-379x64.png" alt="The New York Times" border="0"></image>
 	<input class="form-control" ng-model="user_input" id="input">
-	<button 
-		class="btn btn-default" 
+	<button
+		class="btn btn-default"
 		ng-click="search(user_input)"
 		ng-disabled="user_input.length === 0">Search</button>
 
 	<ul>
 		<li ng-repeat="article in articlesArr">
+			<!-- <img id="article-thumbnail" src="{{article.uri}}"></img> -->
 			<h3><a href="{{article.web_url}}">{{article.headline.main}}</a></h3>
 			Published: {{article.pub_date.substring(0, 10)}}<br><br>
 			{{article.snippet}}<br>
