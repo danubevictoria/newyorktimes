@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>New York Times Article Finder</title>
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Ledger" rel="stylesheet">
 	<!-- ANIMATE CSS -->
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<!-- FONTAWESOME -->
@@ -41,21 +43,26 @@
 	<ul>
 		<li ng-repeat="person in personArr">{{person.firstName}} {{person.lastName}}</li>
 	</ul> -->
-
-	<image width="379" height="64" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://a1.nyt.com/assets/homepage/20170810-135137/images/foundation/logos/nyt-logo-379x64.svg" src="https://a1.nyt.com/assets/homepage/20170810-135137/images/foundation/logos/nyt-logo-379x64.png" alt="The New York Times" border="0"></image>
-	<input class="form-control" ng-model="user_input" id="input">
+	<div class="top">
+	<image id="logo" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://a1.nyt.com/assets/homepage/20170810-135137/images/foundation/logos/nyt-logo-379x64.svg" src="https://a1.nyt.com/assets/homepage/20170810-135137/images/foundation/logos/nyt-logo-379x64.png" alt="The New York Times" border="0"></image>
+	<input id="input" class="form-control" ng-model="user_input">
 	<button
+		id="search-button"
 		class="btn btn-default"
 		ng-click="search(user_input)"
-		ng-disabled="user_input.length === 0">Search</button>
-
-	<ul>
-		<li ng-repeat="article in articlesArr">
-			<!-- <img id="article-thumbnail" src="{{article.uri}}"></img> -->
-			<h3><a href="{{article.web_url}}">{{article.headline.main}}</a></h3>
-			Published: {{article.pub_date.substring(0, 10)}}<br><br>
-			{{article.snippet}}<br>
+		ng-disabled="user_input.length === 0">GO
+	</button>
+</div>
+	<ul id="results">
+		<li class="article" ng-repeat="article in articlesArr">
+			<img id="article-thumbnail" src="https://static01.nyt.com/{{article.multimedia[1].url}}"></img>
+			<div class="article-info">
+				<h3><a class="headline" href="{{article.web_url}}">{{article.headline.main}}</a></h3>
+				<span class="byline">{{article.byline.original}} {{article.pub_date.substring(0, 10)}}</span>
+				<span class="snippet">{{article.snippet}}</span>
+			</div>
 		</li>
+
 	</ul>
 </div>
 

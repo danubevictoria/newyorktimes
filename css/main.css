@@ -1,7 +1,74 @@
+/* CONTROLLER */
 #search_div {
 	padding-top: 40px;
 }
 
+/* TOP */
+.top {
+	margin-left: 5px;
+	margin-right: 5px;
+	overflow-x: hidden;
+}
+
+#logo {
+	 width: 50%;
+	 height: auto;
+	 margin: auto;
+ 		display: block;
+}
+
+#input {
+	width: 90%;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#search-button {
+	position: absolute;
+	margin-right: 10%;
+	float: right;
+}
+
+/* RESULTS */
+#results {
+	font-family: 'Ledger', serif;
+	margin-top: 20px;
+}
+
 li {
 	list-style-type: none;
+	min-height: 170px;
+	border-bottom: 1px solid #E4E4E4;
+	padding: 0 20px 20px 0;
+}
+
+#article-thumbnail {
+	float: left;
+	clear: both;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.headline {
+	font-weight: bold;
+}
+
+.byline {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.snippet {
+	min-height: 100px;
+}
+
+@media screen and (max-width: 600px) {
+	#input {
+		width: 80%;
+	}
+
+	#logo {
+		width: 75%;
+	}
 }
